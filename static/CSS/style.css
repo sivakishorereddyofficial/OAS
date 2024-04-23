@@ -1,0 +1,65 @@
+body {
+    min-height: 100lvh;
+    background-color: rgba(0, 0, 0, 0.09);
+    border: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    min-height: 92lvh;
+
+}
+
+.advertisement-banner {
+    width: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-container {
+    width: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 70%;
+    min-height: 50%;
+    height: auto;
+    padding: 30px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.09), -5px -5px 20px rgba(0, 0, 0, 0.09);
+
+}
+
+.login-icon {
+    height: 30px;
+    width: 30px;
+    fill: #39CCCC;
+
+}
+
+.banner-container{
+    height: 70%;
+    width: 70%;
+}
+
+.signup-form{
+    border: 1px solid red;
+}
+
+.otp-container-body{
+    min-height: 91vh;
+
+}
+
+.otp-container{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2), -5px -5px 20px rgba(0, 0, 0, 0.2);
+    height: 50%;
+    width: 50%;
+}
+
