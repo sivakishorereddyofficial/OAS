@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+{% load static %}
+<div class="container-fluid login-container">
+    <div class="advertisement-banner">
+        <div class="d-flex justify-content-center align-items-center">
+            <img class="banner-container" src="media/signup.svg" />
+        </div>
+    </div>
+    <div class="login-form-container">
+
+        <form class="login-form" action="register-user" method="post">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="userEmail" name="email" placeholder="name@example.com">
+                <label for="userEmail">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="firstName" name="fname" placeholder="John" required>
+                <label for="firstName">First Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="lastName" name="lname" placeholder="Smith" required>
+                <label for="lastName">Last Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" name="password"
+                    placeholder="Choose a strong password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confPassword" name="confPassword"
+                    placeholder="Re-enter password" required>
+                <label for="confPassword">Confirm Password</label>
+            </div>
+
+            {% for message in messages %}
+                <div class="bg-{{message.tags}} p-2 m-2">{{message}}</div>
+            {% endfor %}
+            <div class="d-grid gap-2 m-2">
+                <button class="btn btn-info text-primary-emphasis" id="loginBtn" type="submit">Signup Now</button>
+            </div>
+            
+            <span>
+                Already have an account? <a href="login">Login Here!</a>
+            </span>
+        </form>
+    </div>
+</div>
+
+{% endblock page_content %}

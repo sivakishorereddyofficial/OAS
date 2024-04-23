@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<div class="container-fluid login-container">
+    <div class="advertisement-banner">
+        {% include 'banner.html' %}
+    </div>
+    <div class="login-form-container">
+
+        <form class="login-form" action="login-verify-user" method="post">
+            {% csrf_token %}
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                <svg class="login-icon" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                </svg>
+            </div>
+            <div class="m-2">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                        name="email" required>
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" required id="floatingPassword" placeholder="Password"
+                        name="password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 m-2">
+                <button class="btn btn-info" id="loginBtn" type="submit">Login</button>
+            </div>
+            {% for message in messages %}
+            <div class="bg-{{message.tags}} p-2 m-2">{{message}}</div>
+            {% endfor %}
+            <span>
+                Dont have account? <a href="signup">regiser Now!</a>
+            </span>
+        </form>
+    </div>
+</div>
+
+{% endblock page_content %}
