@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">OAS</a> -->
+        <span class="navbar-brand mb-0 h1">
+            OAS
+        </span>
+    </div>
+    {% if not request.user.is_anonymous %}
+    <button class="btn"> {{ request.user.username }}</button>
+    <form action="logout" method="get"> 
+        <button class="btn btn-info" type="submit">Logout</button>
+    </form>
+    {% endif %}
+</nav>

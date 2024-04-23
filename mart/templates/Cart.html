@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<div class="display-5">
+    An artistic collection of your Cart
+</div>
+{%for item in items %}
+
+<div class="card m-3 p-2 d-flex">
+    <div class="h4">
+        {{item.product.name}} | <button class="btn btn-warning">{{item.count}}<small> quantity</small></button>  
+    </div>
+    <div>Price : <button class="btn btn-info"> {{item.count}} * {{item.product.original_cost}}</button></div>
+</div>
+
+{% endfor %}
+
+{% endblock page_content %}

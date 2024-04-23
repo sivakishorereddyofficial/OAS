@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href=".{% static '/CSS/style.css' %}">
+    <link rel="stylesheet" href=".{% static '/CSS/bootstrap.min.css' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAS Mart - Online Art Store</title>
+</head>
+
+<body>
+    <div class="header">
+        {% include './header.html' %}
+    </div>
+    {% block page_content %}
+    {% endblock page_content %}
+
+</body>
+<script src=".{% static 'JS/bootstrap.bundle.min.js' %}"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <script  src=".{% static 'JS/products.js' %}"></script>
+    <script  src=".{% static 'JS/user.js' %}"></script>
+
+    <script  src=".{% static 'JS/main.js' %}"></script>
+
+
+</html>

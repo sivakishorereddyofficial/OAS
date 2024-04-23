@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../{% static '/CSS/style.css' %}">
+    <link rel="stylesheet" href="../{% static '/CSS/bootstrap.min.css' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAS Mart - Online Art Store</title>
+</head>
+
+<body>
+    <div class="header">
+        {% include './header.html' %}
+    </div>
+
+    <div class="display-3 container-xxl m-2">
+        {{product.name}}
+    </div>
+    <div class="d-flex m-2 justify-content-between align-items-center">
+        <div>
+            <img src="../media/{{image.images}}" height="400" width="600">
+        </div>
+        <div style="width:40%; text-align:left;" class="m-2 pr-5">
+            <div class="h4">{{product.name}}</div>
+            <div>{{product.short_name}}</div>
+            <p>{{product.description}}</p>
+            <hr />
+            <div><strong>Original Art Cost : $ {{product.original_cost}}</strong></div>
+            <div><strong>Discount : {{product.discount_percentage}} %</strong></div>
+            <div>
+                Making Charges :$ {{product.making_charges}}
+            </div>
+            <div>
+                Delivery / Transport Charges : $ {{product.delivery_charges}}
+            </div>
+            <hr />
+            <div class="h3">Total : $ {{cost}} </div>
+            <span>
+                <div class="btn btn-info">Proceed to buy?</div>
+                <a href="../home" class="btn btn-secondary">Back</a>
+            </span>
+        </div>
+    </div>
+
+</body>
+<script src="../{% static 'JS/bootstrap.bundle.min.js' %}"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="../{% static 'JS/products.js' %}"></script>
+<script src="../{% static 'JS/user.js' %}"></script>
+
+<script src="../{% static 'JS/main.js' %}"></script>
+
+
+</html>
